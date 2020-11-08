@@ -1,1 +1,5 @@
-/target
+*/target
+target
+npm_site/node_modules/
+*.un~
+Cargo.lock

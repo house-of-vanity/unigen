@@ -4,13 +4,13 @@ use std::error::Error;
 use handlebars::Handlebars;
 use std::collections::HashMap;
 
-mod unit;
+use unigen_lib::*;
 #[macro_use]
 mod parse_args;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let cfg = parse_args::read();
-    let x = unit::Unit::new(&cfg);
+    let x = unigen_lib::Unit::new();
     let mut registry = Handlebars::new();
     let template= r#"
 {{ #each blocks }}[{{ this.type }}]

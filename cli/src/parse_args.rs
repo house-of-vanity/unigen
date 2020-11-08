@@ -1,5 +1,5 @@
 use clap::{App, Arg};
-use crate::unit::{UnitType};
+use unigen_lib::{UnitType};
 
 #[derive(Debug)]
 pub struct Config {
@@ -9,9 +9,6 @@ pub struct Config {
 }
 
 pub fn read() -> Config {
-    // Parse opts and args
-    //let yaml = load_yaml!("../misc/cli.yml");
-    //let mut cli_args = App::from(yaml).get_matches();
     let mut cli_args = App::new(env!("CARGO_PKG_NAME"))
         .version(env!("CARGO_PKG_VERSION"))
         .author(env!("CARGO_PKG_AUTHORS"))
